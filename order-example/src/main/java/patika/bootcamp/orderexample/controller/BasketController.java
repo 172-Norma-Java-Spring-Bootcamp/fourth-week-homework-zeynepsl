@@ -35,6 +35,13 @@ public class BasketController {
 		return basketService.addProductToBasket(productId, customerId, amount);
 	}
 	
+	@PostMapping("/remove")
+	public void removeProductToBasket(@RequestParam Long productId, @RequestParam Long basketId) {
+		idValidator.validate(basketId);
+		idValidator.validate(productId);
+		basketService.removeProductToBasket(productId, basketId);
+	}
+	
 	@GetMapping("{customerId}")
 	public ResponseEntity<Basket> getByCustomerId(Long customerId) {
 		idValidator.validate(customerId);

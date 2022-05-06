@@ -17,6 +17,8 @@ public interface BasketService {
 	
 	public BasketResponseDto addProductToBasket(Long productId, Long customerId, Integer amount) throws BaseException;
 	
+	public void removeProductToBasket(Long productId, Long basketId) throws BaseException;
+	
 	public Basket getByCustomerId(Long customerId) throws BaseException;
 	
 	void emptyBasket(Long basketId);

@@ -1,4 +1,4 @@
-package patika.bootcamp.orderexample.service;
+package patika.bootcamp.orderexample.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +10,7 @@ import patika.bootcamp.orderexample.exception.BaseException;
 import patika.bootcamp.orderexample.exception.CustomerServiceOperationException;
 import patika.bootcamp.orderexample.model.Customer;
 import patika.bootcamp.orderexample.repository.CustomerRepository;
+import patika.bootcamp.orderexample.service.CustomerService;
 
 import java.util.ArrayList;
 import java.util.List;

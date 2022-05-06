@@ -1,4 +1,4 @@
-package patika.bootcamp.orderexample.service;
+package patika.bootcamp.orderexample.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +14,7 @@ import patika.bootcamp.orderexample.dto.basket.BasketItemDto;
 import patika.bootcamp.orderexample.exception.ServiceOperationException;
 import patika.bootcamp.orderexample.model.BasketItem;
 import patika.bootcamp.orderexample.repository.BasketItemRepository;
+import patika.bootcamp.orderexample.service.BasketItemService;
 
 @Service
 @RequiredArgsConstructor

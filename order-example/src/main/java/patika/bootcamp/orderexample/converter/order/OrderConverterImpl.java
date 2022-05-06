@@ -41,6 +41,8 @@ public class OrderConverterImpl implements OrderConverter{
 		orderResponseDto.setTrackingNumber(order.getTrackingNumber());
 		orderResponseDto.setZipCode(order.getZipCode());
 		orderResponseDto.setPhone(order.getPhone());
+		orderResponseDto.setTaxPrice(order.getTaxPrice());
+		orderResponseDto.setShippingPrice(order.getShippingPrice());
 		
 		List<OrderItemDto> orderItems = new ArrayList<OrderItemDto>();
 		

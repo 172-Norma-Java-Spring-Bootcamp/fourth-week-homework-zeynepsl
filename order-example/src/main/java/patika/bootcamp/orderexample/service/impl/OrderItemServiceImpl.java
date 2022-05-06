@@ -1,4 +1,4 @@
-package patika.bootcamp.orderexample.service;
+package patika.bootcamp.orderexample.service.impl;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import patika.bootcamp.orderexample.constant.serviceExceptionMessage.OrderItemEx
 import patika.bootcamp.orderexample.exception.OrderItemServiceOperationException;
 import patika.bootcamp.orderexample.model.OrderItem;
 import patika.bootcamp.orderexample.repository.OrderItemRepository;
+import patika.bootcamp.orderexample.service.OrderItemService;
 
 @Service
 @RequiredArgsConstructor

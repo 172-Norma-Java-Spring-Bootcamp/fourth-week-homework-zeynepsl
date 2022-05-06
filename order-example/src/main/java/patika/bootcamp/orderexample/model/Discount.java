@@ -24,11 +24,6 @@ public class Discount extends BaseModel{
     		fetch = FetchType.LAZY)
 	private List<Basket> baskets = new ArrayList<Basket>();
 	
-	/*@JsonIgnore
-	@OneToMany(mappedBy = "discount", cascade = CascadeType.ALL, 
-    		fetch = FetchType.LAZY, orphanRemoval = true)
-	private List<Order> orders = new ArrayList<Order>();*/
-	
 	@ManyToMany(mappedBy = "discounts")
 	private List<Order> orders = new ArrayList<Order>();
 	

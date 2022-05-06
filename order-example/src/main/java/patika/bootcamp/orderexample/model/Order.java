@@ -34,10 +34,6 @@ public class Order extends BaseModel{
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
-	/*@ManyToOne
-	@JoinColumn(name =  "discount_id")
-	private Discount discount;*/
-	
 	//iliskide sahip olan taraf:
 	@ManyToMany
 	@JoinTable(

@@ -1,4 +1,4 @@
-package patika.bootcamp.orderexample.validator;
+package patika.bootcamp.orderexample.validator.createRequestValidator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -6,6 +6,7 @@ import org.springframework.util.StringUtils;
 import patika.bootcamp.orderexample.dto.product.CreateProductRequestDto;
 import patika.bootcamp.orderexample.exception.BaseValidationException;
 import patika.bootcamp.orderexample.exception.ControllerOperationException;
+import patika.bootcamp.orderexample.validator.Validator;
 
 @Component
 public class CreateProductRequestValidator implements Validator<CreateProductRequestDto>{

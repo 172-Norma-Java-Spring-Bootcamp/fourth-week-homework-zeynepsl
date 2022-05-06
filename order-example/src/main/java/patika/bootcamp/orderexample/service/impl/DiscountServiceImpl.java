@@ -1,4 +1,4 @@
-package patika.bootcamp.orderexample.service;
+package patika.bootcamp.orderexample.service.impl;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,6 +14,7 @@ import patika.bootcamp.orderexample.exception.BaseException;
 import patika.bootcamp.orderexample.exception.ServiceOperationException;
 import patika.bootcamp.orderexample.model.Discount;
 import patika.bootcamp.orderexample.repository.DiscountRepository;
+import patika.bootcamp.orderexample.service.DiscountService;
 
 @Service
 @RequiredArgsConstructor

@@ -1,6 +1,7 @@
-package patika.bootcamp.orderexample.service;
+package patika.bootcamp.orderexample.service.impl;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -20,6 +21,11 @@ import patika.bootcamp.orderexample.model.BasketItem;
 import patika.bootcamp.orderexample.model.Customer;
 import patika.bootcamp.orderexample.model.Product;
 import patika.bootcamp.orderexample.repository.BasketRepository;
+import patika.bootcamp.orderexample.service.BasketItemService;
+import patika.bootcamp.orderexample.service.BasketService;
+import patika.bootcamp.orderexample.service.CustomerService;
+import patika.bootcamp.orderexample.service.DiscountService;
+import patika.bootcamp.orderexample.service.ProductService;
 
 @Service
 @RequiredArgsConstructor
@@ -110,6 +116,22 @@ public class BasketServiceImpl implements BasketService {
 		log.info("basket item id {}", basketItem.getId());
 		log.info("customer {}", customer.getId());
 		return basketConverter.toBasketResponseDto(basket);
+	}
+	
+	//sepetteki ilgili urunu, sepette kac tane olursa olsun sepetten kaldirmak:
+	@Override
+	public void removeProductToBasket(Long productId, Long basketId) throws BaseException {
+		List<Long> idsOfItemsToDeleted = new ArrayList<Long>();
+		basketItemService.findByBasket_Id(basketId).forEach(basketItem -> {
+			if(basketItem.getProduct().getId().equals(productId)) {
+				idsOfItemsToDeleted.add(basketItem.getId());//  db deki pk yi bize verecek
+			}
+		});
+		Long[] ids = new Long[idsOfItemsToDeleted.size()];
+		for(int i = 0; i < ids.length; i++) {
+			ids[i] = idsOfItemsToDeleted.get(i);
+		}
+		basketItemService.deleteBasketItemsWithIds(ids);
 	}
 
 	@Override
